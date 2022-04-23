@@ -17,7 +17,7 @@ public class InputController : MonoBehaviour
     {
         if (gameController.IsPlaying && gameController.IsPaused)
         {
-            if (Input.anyKeyDown && !Input.GetMouseButton(0))
+            if (Input.anyKeyDown && !Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Escape))
             {
                 gameController.UnpauseGame();
             }

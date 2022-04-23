@@ -8,6 +8,9 @@ public class Block : MonoBehaviour
     public int Hits = 1;
     public int ScoreValue = 100;
 
+    //respawn mechanic for the blocks
+    public float respawnDelay;
+
     GameController gameController;
     public AudioClip OnBreakAudio;
 
@@ -25,7 +28,7 @@ public class Block : MonoBehaviour
             gameController.AddScore(ScoreValue);
             gameController.AudioController.PlayClip(OnBreakAudio);
             Instantiate(gameController.ExplosionPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 }

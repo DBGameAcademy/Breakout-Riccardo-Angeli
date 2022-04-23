@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &145362376
 BoxCollider2D:
@@ -304,6 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &188411596
 BoxCollider2D:
@@ -922,6 +924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &367352477
 BoxCollider2D:
@@ -1069,6 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &396135701
 BoxCollider2D:
@@ -1361,6 +1365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &421854035
 BoxCollider2D:
@@ -2652,6 +2657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &770736755
 BoxCollider2D:
@@ -3005,6 +3011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &1090816912
 BoxCollider2D:
@@ -3152,6 +3159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &1109974050
 BoxCollider2D:
@@ -3432,6 +3440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &1130463560
 BoxCollider2D:
@@ -4185,6 +4194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &1635049195
 BoxCollider2D:
@@ -4597,7 +4607,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Paused! Press any key to continue
+  m_Text: Paused! Press any other key to continue
 --- !u!222 &1942062307
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4836,6 +4846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits: 1
   ScoreValue: 100
+  respawnDelay: 2
   OnBreakAudio: {fileID: 8300000, guid: 390ec1bf0ff5890429c75c74927a784b, type: 3}
 --- !u!61 &2125011200
 BoxCollider2D:
@@ -4999,6 +5010,10 @@ PrefabInstance:
     - target: {fileID: 1705112684038332656, guid: c5f6646233d5723429a2c3a78dcff680, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705112684038332668, guid: c5f6646233d5723429a2c3a78dcff680, type: 3}
+      propertyPath: respawnDelay
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1705112684038332669, guid: c5f6646233d5723429a2c3a78dcff680, type: 3}
       propertyPath: m_Name

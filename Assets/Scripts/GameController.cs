@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     private bool isPaused = false;
     public bool IsPaused { get { return isPaused; } }
 
+
     public void Start()
     {
         UIController.UpdateScoreText(Score);
@@ -32,17 +33,6 @@ public class GameController : MonoBehaviour
         PauseGame();
     }
 
-    private void Update()
-    {
-        if (!isPaused && Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseGame();
-        }
-        else if (isPaused && Input.anyKeyDown)
-        {
-            UnpauseGame();
-        }
-    }
 
     public void AddScore(int _value)
     {
