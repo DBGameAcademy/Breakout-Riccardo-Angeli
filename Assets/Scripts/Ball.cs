@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour
 
     public AudioClip OnWallHitAudio;
     public AudioClip OnPaddleHitAudio;
+    public AudioClip OnRespawn;
 
     private void Awake()
     {
@@ -23,34 +24,40 @@ public class Ball : MonoBehaviour
     void Update()
     {
         transform.Translate(Velocity * Time.deltaTime);
-
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, circleCollider.radius, Velocity, (Velocity * Time.deltaTime).magnitude);
         foreach (RaycastHit2D hit in hits)
         {
             if (hit.collider != circleCollider && hit.transform.gameObject != lastObjectHit)
             {
-                lastObjectHit = hit.transform.gameObject;
-
-                Velocity = Vector2.Reflect(Velocity, hit.normal);
-
-                if (hit.transform.GetComponent<Paddle>())
+                // New respawn method based on killzones
+                if (hit.transform.GetComponent<Killzone>())
                 {
-                    Velocity.y = Mathf.Abs(Velocity.y);
-                    gameController.AudioController.PlayClip(OnPaddleHitAudio);
+                    gameController.BallLost();
+                    Instantiate(gameController.BallVFX, transform.position, Quaternion.identity);
+                    gameController.AudioController.PlayClip(OnRespawn);
                 }
-
-                if (hit.transform.GetComponent<Block>())
+                else
                 {
-                    hit.transform.GetComponent<Block>().OnHit();
+                    lastObjectHit = hit.transform.gameObject;
+                    Velocity = Vector2.Reflect(Velocity, hit.normal);
+                    if (hit.transform.GetComponent<Paddle>())
+                    {
+                        Velocity.y = Mathf.Abs(Velocity.y);
+                        gameController.AudioController.PlayClip(OnPaddleHitAudio);
+                    }
+                    if (hit.transform.GetComponent<Block>())
+                    {
+                        hit.transform.GetComponent<Block>().OnHit();
+                    }
+                    gameController.AudioController.PlayClip(OnWallHitAudio);
                 }
-
-                gameController.AudioController.PlayClip(OnWallHitAudio);
             }
-        }
-
-        if (transform.position.y < -Camera.main.orthographicSize)
-        {
-            gameController.BallLost();
+            // Old respawn method based on camera
+            //    if (transform.position.y < -Camera.main.orthographicSize)
+            //{
+            //    gameController.BallLost();
+            //    Instantiate(gameController.BallVFX, transform.position, Quaternion.identity);
+            //    gameController.AudioController.PlayClip(OnRespawn);
         }
     }
 }

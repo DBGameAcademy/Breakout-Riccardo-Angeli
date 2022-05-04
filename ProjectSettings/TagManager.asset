@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Blocks,Walls,Ball and Paddle
+  - Background 01
+  - Background 02
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background 01
+    uniqueID: 3690212753
+    locked: 0
+  - name: Stars background
+    uniqueID: 965553063
+    locked: 0
+  - name: Background02
+    uniqueID: 1630286155
+    locked: 0
+  - name: Background 03
+    uniqueID: 362653297
+    locked: 0
+  - name: Blocks,Walls,Ball and Paddle
+    uniqueID: 312297773
     locked: 0
